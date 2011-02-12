@@ -9,7 +9,7 @@ ini_set('log_errors', ($config['debug'] ? '1' : '1'));
 ini_set('error_log', $config['logfile']);
 
 // use W3C-conforming URLS when parameters are appended
-ini_set('arg_separator.output', '&amp');
+ini_set('arg_separator.output', '&amp;');
 
 // fall back to using URL for session ID when cookies disabled
 ini_set('session.use_trans_sid', '1');
