@@ -1,0 +1,12 @@
+@mixin font-face($familyname, $basename, $svgsuffix: '') {
+    @font-face {
+        font-family: quote($familyname);
+        src: url($basename + '.eot?') format('eot'), 
+             url($basename + '.woff') format('woff'), 
+             url($basename + '.ttf')  format('truetype'),
+             url($basename + '.svg' + $svgsuffix) format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-variant:normal;
+    }
+}

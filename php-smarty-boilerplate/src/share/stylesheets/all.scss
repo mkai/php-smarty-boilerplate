@@ -1,0 +1,47 @@
+@import "partials/html5-boilerplate";
+@import "partials/font-face";
+@import "partials/semantic-clearfix";
+
+/* Base config
+-------------------------------------------------------------------------- */
+$font-color: #444 !default;
+$link-color: #607890 !default;
+$link-hover-color: #036 !default;
+$link-active-color: #607890 !default;
+$link-visited-color: #607890 !default;
+$selected-font-color: #000;
+$selected-background-color: #ddd; // no hot pink for this one ;)
+$list-left-margin: 1.8em !default;
+
+
+/* Boilerplate partials
+-------------------------------------------------------------------------- */
+@include html5-boilerplate-reset;
+@include html5-boilerplate-styles;
+@include html5-boilerplate-fonts;
+@include html5-boilerplate-helpers;
+
+
+/* Enable use of class="group" instead of class="clearfix"
+-------------------------------------------------------------------------- */
+@include semantic-clearfix;
+
+
+/* Base styles
+-------------------------------------------------------------------------- */
+body { font-family: Arial, sans-serif; }
+p { line-height: 144%; }
+em { font-style: italic; }
+strong { font-weight: bold; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; margin-top: 8px; margin-bottom: 4px; }
+h1 { @include font-size(32px); }
+h2 { @include font-size(28px); }
+h3 { @include font-size(24px); }
+h4 { @include font-size(20px); }
+h5 { @include font-size(16px); }
+h6 { @include font-size(12px); }
+
+
+/* Layout
+-------------------------------------------------------------------------- */
+#page { width: 960px; margin: 0 auto; }
