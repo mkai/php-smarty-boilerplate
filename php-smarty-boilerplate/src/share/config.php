@@ -27,4 +27,9 @@ $config['smarty'] = array();
 $config['smarty']['template_dir'] = dirname(__FILE__).'/templates/';
 $config['smarty']['template_compile_dir'] = $config['smarty']['template_dir'].'compiled';
 $config['smarty']['template_cache_dir'] = $config['smarty']['template_dir'].'cached';
+
+// analytics
+$config['analytics'] = array();
+$config['analytics']['enabled'] = !($config['debug']);
+$config['analytics']['google_analytics_id'] = 'UA-XXXXX-X';
 ?>
