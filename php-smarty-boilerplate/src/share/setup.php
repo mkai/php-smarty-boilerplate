@@ -1,6 +1,6 @@
 <?php
 require_once('config.php');
-require_once('libs/Smarty-3.0.6/libs/Smarty.class.php');
+require_once('util.php');
 
 // configure error reporting and PHP stuff
 ini_set('error_reporting', ($config['debug'] ? E_ALL : 0));
@@ -14,7 +14,14 @@ ini_set('arg_separator.output', '&amp;');
 // fall back to using URL for session ID when cookies disabled
 ini_set('session.use_trans_sid', '1');
 
+// start session
+if ($config['sessions_enabled']) {
+    session_start();    
+}
+
 // set up smarty template engine
+require_once('libs/Smarty-3.0.6/libs/Smarty.class.php');
+
 $template = new Smarty();
 $template->template_dir = $config['smarty']['template_dir'];
 $template->compile_dir = $config['smarty']['template_compile_dir'];

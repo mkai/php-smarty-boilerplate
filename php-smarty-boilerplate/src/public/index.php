@@ -9,7 +9,9 @@ $default_action = 'index';
 $controller = (isset($_GET['controller']) && trim($_GET['controller'] != '') ? $_GET['controller'] : $default_controller);
 $action = (isset($_GET['action']) && trim($_GET['action'] != '') ? $_GET['action'] : $default_action);
 
-$template->assign('page_name', $action);
+// assign to template
+$template->assign('controller_name', $controller);
+$template->assign('action_name', $action);
 
 // load and render template
 try {   
