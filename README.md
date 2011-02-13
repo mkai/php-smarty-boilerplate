@@ -3,5 +3,5 @@ Uses PHP, Smarty, HTML5 Boilerplate, Compass CSS with HTML5 Boilerplate mixins, 
 
 To get a CSS file, install SASS or Compass and use:
 
-  $ cd php-smarty-boilerplate/src/share/stylesheets/
-  $ compass watch -c config.rb
+    $ cd php-smarty-boilerplate/src/share/stylesheets/
+    $ compass watch -c config.rb
