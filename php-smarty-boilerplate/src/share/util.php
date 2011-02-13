@@ -20,7 +20,9 @@ function log_entry($info_message) {
 
 /**
  *    Prettyprints a JSON string.
- *    
+ *  
+ *    Source: umbrae at gmail dot com (http://www.php.net/manual/de/function.json-encode.php#80339)    
+ *
  *    @param string $json The compressed JSON data to be beautified.
  *
  */
