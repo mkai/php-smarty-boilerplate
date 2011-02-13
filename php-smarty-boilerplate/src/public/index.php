@@ -10,8 +10,8 @@ $controller = (isset($_GET['controller']) && trim($_GET['controller'] != '') ? $
 $action = (isset($_GET['action']) && trim($_GET['action'] != '') ? $_GET['action'] : $default_action);
 
 // assign to template
-$template->assign('controller_name', $controller);
-$template->assign('action_name', $action);
+$template->assign('CONTROLLER_NAME', $controller);
+$template->assign('ACTION_NAME', $action);
 
 // load and render template
 try {   

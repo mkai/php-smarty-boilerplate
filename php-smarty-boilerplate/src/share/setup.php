@@ -28,11 +28,13 @@ $template->compile_dir = $config['smarty']['template_compile_dir'];
 $template->cache_dir = $config['smarty']['template_cache_dir'];
 
 // assign server variables to base template
-$template->assign('request_url', $config['request_url']);
-$template->assign('media_url', $config['media_url']);
+$template->assign('REQUEST_URL', $config['request_url']);
+$template->assign('MEDIA_URL', $config['media_url']);
 
 // assign app variables to base template
-$template->assign('debug', $config['debug']);
-$template->assign('app_name', $config['app_name']);
-$template->assign('app_title', $config['app_title']);
+$template->assign('APP_NAME', $config['app_name']);
+$template->assign('APP_TITLE', $config['app_title']);
+
+// make config variables usable in template
+$template->assign('CONFIG', $config);
 ?>
