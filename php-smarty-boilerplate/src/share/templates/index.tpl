@@ -1,6 +1,6 @@
 {extends file="base.tpl"}
 
-{block name=title}Startseite{/block}
+{block name=title}Start page{/block}
 {block name=description}{$smarty.block.parent}{/block}
 {block name=nav}{$smarty.block.parent}{/block}
 
@@ -8,7 +8,7 @@
 {block name=additional_stylesheets}{$smarty.block.parent}{/block}
 
 {block name=content}
-    <h3 class="{$page_name}">Startseite</h3>
+    <h3 class="{$action_name}">Start page</h3>
 {/block}
 
 {block name=sidebar}{$smarty.block.parent}{/block}
