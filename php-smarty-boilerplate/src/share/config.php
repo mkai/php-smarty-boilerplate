@@ -30,6 +30,6 @@ $config['smarty']['template_cache_dir'] = $config['smarty']['template_dir'].'cac
 
 // analytics
 $config['analytics'] = array();
-$config['analytics']['enabled'] = !($config['debug']);
+$config['analytics']['enabled'] = false;
 $config['analytics']['google_analytics_id'] = 'UA-XXXXX-X';
 ?>
