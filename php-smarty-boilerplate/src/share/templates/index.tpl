@@ -8,7 +8,7 @@
 {block name=additional_stylesheets}{$smarty.block.parent}{/block}
 
 {block name=content}
-    <h3 class="{$action_name}">Start page</h3>
+    <h3 class="{$ACTION_NAME}">Start page</h3>
 {/block}
 
 {block name=sidebar}{$smarty.block.parent}{/block}

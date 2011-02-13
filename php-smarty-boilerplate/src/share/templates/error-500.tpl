@@ -8,7 +8,7 @@
 {block name=additional_stylesheets}{$smarty.block.parent}{/block}
 
 {block name=content}
-    <h3 class="{$action_name}">Server error</h3>
+    <h3 class="{$ACTION_NAME}">Server error</h3>
     <p>A server error occured while trying to load your page.</p>
 {/block}
 
