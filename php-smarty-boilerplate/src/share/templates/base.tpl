@@ -11,7 +11,6 @@
 
         <title>{block name=title}Title{/block} | {$APP_TITLE}</title>
         <meta name="description" content="{block name="description"}Description{/block}">
-        <meta name="author" content="">
   
         <script src="{$MEDIA_URL}scripts/libs/modernizr/modernizr-1.6.min.js"></script>
     </head>
