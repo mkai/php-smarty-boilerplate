@@ -4,14 +4,14 @@
 
 /* Base config
 -------------------------------------------------------------------------- */
-$font-color: #444 !default;
-$link-color: #607890 !default;
-$link-hover-color: #036 !default;
-$link-active-color: #607890 !default;
-$link-visited-color: #607890 !default;
+$font-color: #444;
+$link-color: #607890;
+$link-hover-color: #036;
+$link-active-color: #607890;
+$link-visited-color: #607890;
 $selected-font-color: #000;
 $selected-background-color: #ddd; // no hot pink for this one ;)
-$list-left-margin: 1.8em !default;
+$list-left-margin: 1.8em;
 
 
 /* Boilerplate partials
@@ -29,17 +29,24 @@ $list-left-margin: 1.8em !default;
 
 /* Base styles
 -------------------------------------------------------------------------- */
-body { font-family: Arial, sans-serif; }
+body { font-family: Arial, sans-serif; color: $font-color; }
+a, a:link { color: $link-color; }
+a:active { color: $link-active-color; }
+a:hover { color: $link-hover-color; }
+a:visited { color: $link-visited-color; }
 p { line-height: 144%; }
 em { font-style: italic; }
 strong { font-weight: bold; }
-h1, h2, h3, h4, h5, h6 { font-weight: bold; margin-top: 8px; margin-bottom: 4px; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; margin-top: 12px; margin-bottom: 4px; }
 h1 { @include font-size(32px); }
 h2 { @include font-size(28px); }
 h3 { @include font-size(24px); }
 h4 { @include font-size(20px); }
 h5 { @include font-size(16px); }
 h6 { @include font-size(12px); }
+
+.first { margin-top: 0; }
+.last { margin-bottom: 0; }
 
 
 /* Layout
