@@ -1,11 +1,12 @@
+// latest version 2011-02-21 http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax
 @mixin font-face($familyname, $basename, $svgsuffix: '') {
     @font-face {
-        font-family: quote($familyname);
-        src: url($basename + '.eot?') format('eot'), 
-             url($basename + '.woff') format('woff'), 
-             url($basename + '.ttf')  format('truetype'),
-             url($basename + '.svg' + $svgsuffix) format('svg');
-        font-weight: normal;
+    	font-family: quote($familyname);
+    	src: url($basename + '.eot'); /* IE9 Compat Modes */
+    	src: url($basename + '.eot?iefix') format('eot'), /* IE6-IE8 */
+    	     url($basename + '.woff') format('woff'), /* Modern Browsers */
+    	     url($basename + '.ttf')  format('truetype'), /* Safari, Android, iOS */
+    	     url($basename + '.svg' + $svgsuffix) format('svg'); /* Legacy iOS */
         font-style: normal;
         font-variant:normal;
     }
