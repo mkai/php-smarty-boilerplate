@@ -4,7 +4,7 @@ $config = array();
 
 // debug mode?
 $config['deployment_hostnames'] = array('example.com', 'www.example.com');
-$config['debug'] = !(in_array($_SERVER['SERVER_NAME'], $config['deployment_hostnames']));
+$config['debug'] = !(in_array(strtolower($_SERVER['SERVER_NAME']), $config['deployment_hostnames']));
 
 // ...
 $config['app_name'] = 'mypage';
