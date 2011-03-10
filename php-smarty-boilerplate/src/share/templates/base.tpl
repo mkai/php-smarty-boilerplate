@@ -6,6 +6,7 @@
     <head>
         <meta charset="utf-8">
 
+        <!--[if IE]><![endif]-->
         <link rel="stylesheet" href="{$MEDIA_URL}stylesheets/all.css?1">
         {block name=additional_stylesheets}{/block}
 
