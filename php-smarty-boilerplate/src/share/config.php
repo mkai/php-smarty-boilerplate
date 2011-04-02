@@ -6,6 +6,9 @@ $config = array();
 $config['deployment_hostnames'] = array('example.com', 'www.example.com');
 $config['debug'] = !(in_array(strtolower($_SERVER['SERVER_NAME']), $config['deployment_hostnames']));
 
+// language
+$config['lang'] = 'en';
+
 // ...
 $config['app_name'] = 'mypage';
 $config['app_title'] = 'My page';

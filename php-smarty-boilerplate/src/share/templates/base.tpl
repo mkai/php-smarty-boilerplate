@@ -16,7 +16,7 @@
         <script src="{$MEDIA_URL}scripts/libs/modernizr/modernizr-1.6.min.js"></script>
     </head>
 
-    <body lang="en">
+    <body lang="{$CONFIG.lang}">
         <script>
             if (navigator.platform.indexOf("Win32") != -1 || navigator.platform.indexOf("Win64") != -1) { document.body.className += ' platform-windows'; }
             else if (navigator.platform.indexOf("Linux") != -1) { document.body.className += ' platform-linux'; }
