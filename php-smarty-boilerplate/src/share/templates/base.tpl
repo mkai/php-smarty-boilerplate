@@ -14,11 +14,10 @@
         <meta name="description" content="{block name="description"}Description{/block}">
   
         <script src="{$MEDIA_URL}scripts/libs/modernizr/1.7/modernizr.min.js"></script>
+        <script>document.documentElement.className+=navigator.platform.indexOf("Win32")!=-1||navigator.platform.indexOf("Win64")!=-1?" platform-windows":navigator.platform.indexOf("Linux")!=-1?" platform-linux":navigator.userAgent.indexOf("Mac OS X")!=-1||navigator.userAgent.indexOf("MSIE 5.2")!=-1||navigator.platform.indexOf("Mac")!=-1?" platform-mac":" platform-other";</script>
     </head>
 
-    <body lang="{$CONFIG.lang}">
-        <script>document.body.className+=navigator.platform.indexOf("Win32")!=-1||navigator.platform.indexOf("Win64")!=-1?" platform-windows":navigator.platform.indexOf("Linux")!=-1?" platform-linux":navigator.userAgent.indexOf("Mac OS X")!=-1||navigator.userAgent.indexOf("MSIE 5.2")!=-1||navigator.platform.indexOf("Mac")!=-1?" platform-mac":" platform-other";</script>
-        
+    <body lang="{$CONFIG.lang}">        
         <div id="page" class="{$ACTION_NAME}">
             <header>
                 <hgroup>
