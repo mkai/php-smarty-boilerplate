@@ -32,14 +32,14 @@
                 
                 {block name=nav}
                 <nav>
-                    <ul class="group">
+                    <ul>
                         <li id="index"{if $ACTION_NAME == 'index'} class="active"{/if}><a href="./">Index</a></li>
                     </ul>
                 </nav>
                 {/block}
             </header>
     
-            <div id="main" class="group">
+            <div id="main">
                 <div id="content">
                     {block name=content}
                     
