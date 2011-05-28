@@ -21,7 +21,7 @@ if ($config['sessions_enabled']) {
 }
 
 // set up smarty template engine
-require_once('libs/Smarty-3.0.6/libs/Smarty.class.php');
+require_once('libs/Smarty-3.0.7/libs/Smarty.class.php');
 
 $template = new Smarty();
 $template->template_dir = $config['smarty']['template_dir'];
