@@ -7,22 +7,17 @@
         <meta charset="utf-8">
 
         <!--[if IE]><![endif]-->
-        <link rel="stylesheet" href="{$MEDIA_URL}stylesheets/all.css?1">
+        <link rel="stylesheet" href="{$MEDIA_URL}stylesheets/all.css{$CACHE_BUSTER}">
         {block name=additional_stylesheets}{/block}
 
         <title>{block name=title}Title{/block} | {$APP_TITLE}</title>
         <meta name="description" content="{block name="description"}Description{/block}">
   
-        <script src="{$MEDIA_URL}scripts/libs/modernizr/modernizr-1.6.min.js"></script>
+        <script src="{$MEDIA_URL}scripts/libs/modernizr/1.7/modernizr.min.js"></script>
     </head>
 
     <body lang="{$CONFIG.lang}">
-        <script>
-            if (navigator.platform.indexOf("Win32") != -1 || navigator.platform.indexOf("Win64") != -1) { document.body.className += ' platform-windows'; }
-            else if (navigator.platform.indexOf("Linux") != -1) { document.body.className += ' platform-linux'; }
-            else if (navigator.userAgent.indexOf("Mac OS X") != -1 || navigator.userAgent.indexOf("MSIE 5.2") != -1 || navigator.platform.indexOf("Mac") != -1) { document.body.className += ' platform-mac'; }
-            else { document.body.className += ' platform-other'; }
-        </script>
+        <script>document.body.className+=navigator.platform.indexOf("Win32")!=-1||navigator.platform.indexOf("Win64")!=-1?" platform-windows":navigator.platform.indexOf("Linux")!=-1?" platform-linux":navigator.userAgent.indexOf("Mac OS X")!=-1||navigator.userAgent.indexOf("MSIE 5.2")!=-1||navigator.platform.indexOf("Mac")!=-1?" platform-mac":" platform-other";</script>
         
         <div id="page" class="{$ACTION_NAME}">
             <header>
@@ -60,13 +55,13 @@
             </footer>
         </div> <!-- end #page -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> 
-        <script>!window.jQuery && document.write(unescape('%3Cscript src="{$MEDIA_URL}scripts/libs/jquery/1.5.1/jquery.min.js"%3E%3C/script%3E'))</script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
+        <script>!window.jQuery && document.write(unescape('%3Cscript src="{$MEDIA_URL}scripts/libs/jquery/1.6.1/jquery.min.js"%3E%3C/script%3E'))</script>
         {block name=additional_scripts}{/block}
 
         <!--[if lt IE 7 ]>
             <script src="{$MEDIA_URL}scripts/libs/dd_belatedpng/dd_belatedpng.js"></script>
-            <script>DD_belatedPNG.fix('img, .trans-bg');</script>
+            <script>DD_belatedPNG.fix('img, .alpha');</script>
         <![endif]-->
 
         {if $CONFIG.analytics.enabled}
