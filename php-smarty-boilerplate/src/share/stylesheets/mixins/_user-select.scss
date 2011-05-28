@@ -1,0 +1,6 @@
+/* How to make text unselectable on HTML page, see http://suchan.cz/?p=33 */
+@mixin user-select($val) {
+    -webkit-user-select: $val;
+    -moz-user-select: $val;
+    user-select: $val;
+}

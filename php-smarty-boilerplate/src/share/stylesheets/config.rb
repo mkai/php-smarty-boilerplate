@@ -1,14 +1,28 @@
 # Require any additional compass plugins here.
-# Set this to the root of your project when deployed:
-css_dir = "../../public/static/stylesheets/"
-sass_dir = "."
-images_dir = "../../public/static/images/"
-javascripts_dir = "../../public/static/scripts/"
-cache_dir = "/tmp/sass-cache/"
+require "html5-boilerplate"
+require "susy"
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true
 
+# Set this to the root of your project when deployed:
+css_dir = "../../public/static/stylesheets/"
+images_dir = "../../public/static/images/"
+fonts_dir = "../../public/static/fonts"
+javascripts_dir = "../../public/static/scripts/"
+sass_dir = "."
+cache_dir = ".tmp/sass-cache/"
+
 # "compress"
-style = :compressed
 output_style = :compressed
+# output_style = :compact
+
+# success callback
+on_stylesheet_saved do |filename|
+  %x[growl --host localhost --name "Compass" --title "Stylesheet saved!" --message "Your stylesheet was compiled successfully." -P "ruby-growl-password"] # provided by ruby-growl gem
+end
+
+# error callback
+on_stylesheet_error do |filename, message|
+  %x[afplay /System/Library/Sounds/Sosumi.aiff]
+end
