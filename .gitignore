@@ -3,4 +3,5 @@
 *.log
 *.tpl.php
 compass_app_log.txt
-stylesheets/all.css
+all.css
+sass-cache
