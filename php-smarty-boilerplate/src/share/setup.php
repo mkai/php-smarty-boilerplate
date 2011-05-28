@@ -31,6 +31,7 @@ $template->cache_dir = $config['smarty']['template_cache_dir'];
 // assign server variables to base template
 $template->assign('REQUEST_URL', $config['request_url']);
 $template->assign('MEDIA_URL', $config['media_url']);
+$template->assign('CACHE_BUSTER', $config['cache_buster']);
 
 // assign app variables to base template
 $template->assign('APP_NAME', $config['app_name']);
