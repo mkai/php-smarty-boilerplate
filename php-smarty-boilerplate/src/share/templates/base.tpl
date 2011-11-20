@@ -18,7 +18,7 @@
     </head>
 
     <body>
-        <div class="page" class="{$ACTION_NAME}">
+        <div class="page {$ACTION_NAME}">
             <header>
                 <h1><a href="./">{$APP_TITLE}</a></h1>                
                 {block name=nav}
