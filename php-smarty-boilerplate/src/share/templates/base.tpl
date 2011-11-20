@@ -11,14 +11,14 @@
 
         <title>{block name=title}Page title{/block} | {$APP_TITLE}</title>
         <meta name="description" content="{block name="description"}Site description.{/block}">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <script src="{$MEDIA_URL}scripts/libs/modernizr/2.0.6/modernizr.min.js"></script>
         <script>document.documentElement.className+=navigator.platform.indexOf("Win32")!=-1||navigator.platform.indexOf("Win64")!=-1?" platform-windows":navigator.platform.indexOf("Linux")!=-1?" platform-linux":navigator.userAgent.indexOf("Mac OS X")!=-1||navigator.userAgent.indexOf("MSIE 5.2")!=-1||navigator.platform.indexOf("Mac")!=-1?" platform-mac":" platform-other";</script>
     </head>
 
     <body>
-        <div class="page" class="{$ACTION_NAME}">
+        <div class="page {$ACTION_NAME}">
             <header>
                 <h1><a href="./">{$APP_TITLE}</a></h1>                
                 {block name=nav}

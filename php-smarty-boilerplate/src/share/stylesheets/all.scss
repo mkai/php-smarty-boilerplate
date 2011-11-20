@@ -2,22 +2,24 @@
 -------------------------------------------------------------------------- */
 @import "base";
 
-
 /* HTML5 Boilerplate base styles (normalize, helpers)
 -------------------------------------------------------------------------- */
 @include html5-boilerplate;
 
-
 /* Base styles
 -------------------------------------------------------------------------- */
 body { color: $font-color; }
-a, a:link { color: $link-color; }
-a:hover { color: $link-hover-color; }
-a:visited { color: $link-visited-color; }
+a { @include link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color); }
 
+/* Device layouts
+------------------------------------------------- */
+@import "desktop";
+@media only screen and (max-width: 767px) { @import "mobile"; body:after { content: "Mobile"; } }
+@media only screen and (min-width: 480px) and (max-width: 767px) { @import "mobile-wide"; body:after { content: "Mobile (Landscape)"; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) { @import "tablet"; body:after { content: "Tablet"; } }
+@media only screen and (min-width: 1382px) { @import "desktop-wide"; body:after { content: "Desktop (widescreen)"; } }
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) { @import "retina"; body:after { content: "Retina"; } }
 
 /* Print styles
 -------------------------------------------------------------------------- */
-@media print {
-    @include html5-boilerplate-print;
-}
+@media print { @include html5-boilerplate-print; }

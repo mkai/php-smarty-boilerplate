@@ -1,0 +1,7 @@
+/* Wide Mobile Layout: 480px. */
+$total-cols: 4;
+$col-width: 4em;
+$gutter-width: 1em;
+$side-gutter-width: 0em;
+
+#{$susy-grid-element} { @include container; @include susy-grid-background; }
