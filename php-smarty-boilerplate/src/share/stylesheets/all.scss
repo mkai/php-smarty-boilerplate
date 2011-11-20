@@ -3,7 +3,7 @@
 @import "base";
 
 
-/* HTML5 Boilerplate mixins (reset, fonts, styles, helpers)
+/* HTML5 Boilerplate base styles (normalize, helpers)
 -------------------------------------------------------------------------- */
 @include html5-boilerplate;
 
@@ -11,32 +11,13 @@
 /* Base styles
 -------------------------------------------------------------------------- */
 body { color: $font-color; }
-// a, a:link { color: $link-color; text-decoration: none; }
-// a:active { color: $link-active-color; }
-// a:hover { color: $link-hover-color; }
-// a:visited { color: $link-visited-color; }
-p { margin-bottom: 1.2em; }
-em { font-style: italic; }
-strong { font-weight: bold; }
-h1, h2, h3, h4, h5, h6 { font-weight: bold; margin-top: .6em; margin-bottom: .3em; }
-h1 { @include font-size(24px); }
-h2 { @include font-size(20px); }
-h3 { @include font-size(16px); }
-h4 { @include font-size(12px); }
-h5 { @include font-size(12px); }
-h6 { @include font-size(12px); }
-
-
-/* Common elements
--------------------------------------------------------------------------- */
-.first { margin-top: 0; }
-.last { margin-bottom: 0; }
-.clr { clear: both; }
-.invis { visibility: hidden; }
+a, a:link { color: $link-color; }
+a:hover { color: $link-hover-color; }
+a:visited { color: $link-visited-color; }
 
 
 /* Print styles
 -------------------------------------------------------------------------- */
 @media print {
-    @include media-print;    
+    @include html5-boilerplate-print;
 }

@@ -1,39 +1,22 @@
-/* Colors 
-------------------------------------------------- */
-$lightred: #ff0000;
-$darkred: #870802;
-
-
 /* Fonts
 ------------------------------------------------- */
-$serif-stack: "Georgia", serif;
+$sans-serif-stack: "Helvetica Neue", "Helvetica", "Arial", "Verdana", sans-serif;
+$serif-stack: "Georgia", "Times", "Times New Roman", serif;
 $monospace-stack: "Menlo", "Monaco", "Andale Mono", "Courier New", fixed;
-$sans-serif-stack: "Candara", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans Unicode MS", "Verdana", "Arial", sans-serif;
 
-/* h5bp _styles.scss */
-$font-color: #333;
-$link-color: #607890;
-$link-hover-color: #036;
-$link-active-color: #607890;
-$link-visited-color: #607890;
-$selected-font-color: #fff;
-$selected-background-color: #ff5e99;
-$list-left-margin: 1.8em;
-
-/* h5bp _fonts.scss */
 $base-font-family: $sans-serif-stack;
-$base-font-size: 13px; // 1em == $base-font-size
+$base-font-size: 13px;
 $base-line-height: 1.231;
 
 
-/* Grid 
+/* Base colors
 ------------------------------------------------- */
-$total-cols: 24;
-$col-width: 2em;
-$gutter-width: 1em;
-$side-gutter-width: 0em;
-
-$show-grid-backgrounds: false;
+$font-color: #222;
+$link-color: #00e;
+$link-visited-color: #551a8b;
+$link-hover-color: #06e;
+$selected-font-color: #fff;
+$selected-background-color: #fe57a1;
 
 
 /* Cache busting
@@ -41,14 +24,6 @@ $show-grid-backgrounds: false;
 $cache_buster_suffix: "?1";
 
 
-/* Imports
+/* Compass extensions
 ------------------------------------------------- */
-@import "susy";
-@import "html5-boilerplate";
-@import "compass/css3/images"; /* includes background gradients etc. */
-@import "compass/css3/box-shadow";
-@import "compass/css3/text-shadow";
-@import "compass/css3/border-radius";
-@import "compass/css3/transition";
-@import "compass/utilities/sprites";
-@import "mixins/user-select";
+@import "compass/html5-boilerplate";
