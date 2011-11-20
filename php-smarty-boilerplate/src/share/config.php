@@ -8,10 +8,11 @@ $config['debug'] = !(in_array(strtolower($_SERVER['SERVER_NAME']), $config['depl
 
 // language
 $config['lang'] = 'en';
+$config['timezone'] = 'Europe/Berlin';
 
 // ...
-$config['app_name'] = 'mypage';
-$config['app_title'] = 'My page';
+$config['app_name'] = 'mysite';
+$config['app_title'] = 'My site';
 
 // server-related
 $config['document_root'] = dirname(__FILE__).'/../public/';
@@ -37,5 +38,5 @@ $config['analytics']['enabled'] = false;
 $config['analytics']['google_analytics_id'] = 'UA-XXXXX-X';
 
 // cache busting
-$config['cache_buster'] = '?1';
+$config['cache_buster'] = '?2';
 ?>

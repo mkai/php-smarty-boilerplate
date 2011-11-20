@@ -2,6 +2,4 @@
 *.tmproj
 *.log
 *.tpl.php
-compass_app_log.txt
-all.css
-sass-cache
+share/stylesheets/.tmp/sass-cache

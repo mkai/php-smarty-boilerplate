@@ -1,7 +1,3 @@
-# Require any additional compass plugins here.
-require "html5-boilerplate"
-require "susy"
-
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true
 
@@ -17,12 +13,12 @@ cache_dir = ".tmp/sass-cache/"
 output_style = :compressed
 # output_style = :compact
 
-# success callback
-on_stylesheet_saved do |filename|
-  %x[growl --host localhost --name "Compass" --title "Stylesheet saved!" --message "Your stylesheet was compiled successfully." -P "ruby-growl-password"] # provided by ruby-growl gem
-end
+# success callback, needs gem 'ruby-growl'
+# on_stylesheet_saved do |filename|
+#   %x[growlnotify --name Compass --title "Stylesheet saved" --message "Your stylesheet was compiled successfully." --host localhost --appIcon compass.app] # provided by Growl DMG
+# end
 
 # error callback
-on_stylesheet_error do |filename, message|
-  %x[afplay /System/Library/Sounds/Sosumi.aiff]
-end
+# on_stylesheet_error do |filename, message|
+#   %x[afplay /System/Library/Sounds/Sosumi.aiff]
+# end

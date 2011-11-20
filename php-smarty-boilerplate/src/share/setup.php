@@ -1,6 +1,8 @@
 <?php
 require_once('config.php');
-require_once('util.php');
+
+// set time zone
+ini_set('date.timezone', $config['timezone']);
 
 // configure error reporting and PHP stuff
 ini_set('error_reporting', E_ALL | E_STRICT);
@@ -11,7 +13,7 @@ ini_set('error_log', $config['logfile']);
 // use W3C-conforming URLS when parameters are appended
 ini_set('arg_separator.output', '&amp;');
 
-// Session support
+// session support
 if ($config['sessions_enabled']) {
     // fall back to using URL for session ID when cookies disabled
     ini_set('session.use_trans_sid', '1');
@@ -21,7 +23,7 @@ if ($config['sessions_enabled']) {
 }
 
 // set up smarty template engine
-require_once('libs/Smarty-3.0.7/libs/Smarty.class.php');
+require_once('libs/Smarty-3.1.5/libs/Smarty.class.php');
 
 $template = new Smarty();
 $template->template_dir = $config['smarty']['template_dir'];
