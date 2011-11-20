@@ -8,7 +8,7 @@
 {block name=additional_stylesheets}{$smarty.block.parent}{/block}
 
 {block name=content}
-    <h3 class="first {$ACTION_NAME}">Page not found</h3>
+    <h1>Page not found</h1>
     <p>The page you asked for could not be found.</p>
 {/block}
 
