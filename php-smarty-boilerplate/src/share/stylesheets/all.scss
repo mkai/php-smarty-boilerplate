@@ -10,16 +10,23 @@
 -------------------------------------------------------------------------- */
 body { color: $font-color; }
 a { @include link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color); }
+img, embed, object, video { max-width: 100%; }
 
 /* Device layouts
 ------------------------------------------------- */
 @import "desktop";
-@media only screen and (max-width: 767px) { @import "mobile"; body:after { content: "Mobile"; } }
-@media only screen and (min-width: 480px) and (max-width: 767px) { @import "mobile-wide"; body:after { content: "Mobile (Landscape)"; } }
-@media only screen and (min-width: 768px) and (max-width: 991px) { @import "tablet"; body:after { content: "Tablet"; } }
-@media only screen and (min-width: 1382px) { @import "desktop-wide"; body:after { content: "Desktop (widescreen)"; } }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) { @import "retina"; body:after { content: "Retina"; } }
+@media only screen and (max-width: 767px) { @import "mobile"; }
+@media only screen and (min-width: 480px) and (max-width: 767px) { @import "mobile-wide"; }
+@media only screen and (min-width: 768px) and (max-width: 991px) { @import "tablet"; }
+@media only screen and (min-width: 1382px) { @import "desktop-wide"; }
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) { @import "retina"; }
 
 /* Print styles
 -------------------------------------------------------------------------- */
 @media print { @include html5-boilerplate-print; }
+
+/* Styles for example elements
+-------------------------------------------------------------------------- */
+p { text-align: justify; @include clearfix; }
+p:nth-child(2n) img { float: left; }
+p:nth-child(2n+1) img { float: right; }
