@@ -1,17 +1,17 @@
-# To enable relative paths to assets via compass helper functions. Uncomment:
-relative_assets = true
+project_type = :stand_alone
+preferred_syntax = :scss
 
-# Set this to the root of your project when deployed:
+http_path = "/"
+sass_dir = "."
+cache_dir = ".tmp/sass-cache/"
 css_dir = "../../public/static/stylesheets/"
 images_dir = "../../public/static/images/"
 fonts_dir = "../../public/static/fonts"
 javascripts_dir = "../../public/static/scripts/"
-sass_dir = "."
-cache_dir = ".tmp/sass-cache/"
+relative_assets = true
 
-# "compress"
 output_style = :compressed
-# output_style = :compact
+line_comments = false
 
 # success callback, needs gem 'ruby-growl'
 # on_stylesheet_saved do |filename|
