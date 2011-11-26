@@ -1,0 +1,7 @@
+/* Tablet Layout: 768px. */
+$total-cols: 12;
+$col-width: 2em;
+$gutter-width: 1em;
+$side-gutter-width: 1em;
+
+#{$susy-grid-element} { @include container; @include susy-grid-background; }

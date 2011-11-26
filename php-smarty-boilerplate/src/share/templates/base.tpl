@@ -11,7 +11,7 @@
 
         <title>{block name=title}Page title{/block} | {$APP_TITLE}</title>
         <meta name="description" content="{block name="description"}Site description.{/block}">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <script src="{$MEDIA_URL}scripts/libs/modernizr/2.0.6/modernizr.min.js"></script>
         <script>document.documentElement.className+=navigator.platform.indexOf("Win32")!=-1||navigator.platform.indexOf("Win64")!=-1?" platform-windows":navigator.platform.indexOf("Linux")!=-1?" platform-linux":navigator.userAgent.indexOf("Mac OS X")!=-1||navigator.userAgent.indexOf("MSIE 5.2")!=-1||navigator.platform.indexOf("Mac")!=-1?" platform-mac":" platform-other";</script>
@@ -19,10 +19,10 @@
 
     <body>
         <div class="page {$ACTION_NAME}">
-            <header>
+            <header role="banner">
                 <h1><a href="./">{$APP_TITLE}</a></h1>                
                 {block name=nav}
-                <nav>
+                <nav role="navigation">
                     <ul>
                         <li class="index{if $ACTION_NAME == 'index'} active{/if}"><a href="./">Start page</a></li>
                     </ul>
@@ -31,28 +31,28 @@
             </header>
     
             <div class="main">
-                <section class="content">
+                <section role="main" class="content">
                     {block name=content}
                     
                     {/block}
                 </section> <!-- end .content -->
                 
-                <aside>
+                <aside role="complementary">
                     {block name=sidebar}
                     
                     {/block}
                 </aside>
             </div> <!-- end .main -->
     
-            <footer>
+            <footer role="contentinfo">
                 {block name=footer}
                     <a href="index.php?action=legal">Legal notice</a>
                 {/block}
             </footer>
         </div> <!-- end .page -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script> 
-        <script>!window.jQuery && document.write(unescape('%3Cscript src="{$MEDIA_URL}scripts/libs/jquery/1.7.0/jquery.min.js"%3E%3C/script%3E'))</script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+        <script>!window.jQuery && document.write(unescape('%3Cscript src="{$MEDIA_URL}scripts/libs/jquery/1.7.1/jquery.min.js"%3E%3C/script%3E'))</script>
         {block name=additional_scripts}{/block}
 
         <!--[if lt IE 7 ]>

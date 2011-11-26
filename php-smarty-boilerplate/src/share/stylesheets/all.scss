@@ -2,22 +2,31 @@
 -------------------------------------------------------------------------- */
 @import "base";
 
-
 /* HTML5 Boilerplate base styles (normalize, helpers)
 -------------------------------------------------------------------------- */
 @include html5-boilerplate;
 
-
 /* Base styles
 -------------------------------------------------------------------------- */
 body { color: $font-color; }
-a, a:link { color: $link-color; }
-a:hover { color: $link-hover-color; }
-a:visited { color: $link-visited-color; }
+a { @include link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color); }
+img, embed, object, video { max-width: 100%; }
 
+/* Device layouts
+------------------------------------------------- */
+@import "desktop";
+@media only screen and (max-width: 767px) { @import "mobile"; }
+@media only screen and (min-width: 480px) and (max-width: 767px) { @import "mobile-wide"; }
+@media only screen and (min-width: 768px) and (max-width: 991px) { @import "tablet"; }
+@media only screen and (min-width: 1382px) { @import "desktop-wide"; }
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) { @import "retina"; }
 
 /* Print styles
 -------------------------------------------------------------------------- */
-@media print {
-    @include html5-boilerplate-print;
-}
+@media print { @include html5-boilerplate-print; }
+
+/* Styles for example elements
+-------------------------------------------------------------------------- */
+p { text-align: justify; @include clearfix; }
+p:nth-child(2n) img { float: left; }
+p:nth-child(2n+1) img { float: right; }

@@ -5,25 +5,34 @@ $serif-stack: "Georgia", "Times", "Times New Roman", serif;
 $monospace-stack: "Menlo", "Monaco", "Andale Mono", "Courier New", fixed;
 
 $base-font-family: $sans-serif-stack;
-$base-font-size: 13px;
+$base-font-size: 24px;
 $base-line-height: 1.231;
-
 
 /* Base colors
 ------------------------------------------------- */
 $font-color: #222;
+
 $link-color: #00e;
-$link-visited-color: #551a8b;
 $link-hover-color: #06e;
+$link-active-color: brighten($link-color, 10%);
+$link-visited-color: #551a8b;
+$link-focus-color: brighten($link-color, 10%);
+
 $selected-font-color: #fff;
 $selected-background-color: #fe57a1;
-
 
 /* Cache busting
 ------------------------------------------------- */
 $cache_buster_suffix: "?1";
 
+/* Grid
+------------------------------------------------- */
+$susy-grid-element: ".page";
+$show-grid-backgrounds: false;
 
 /* Compass extensions
 ------------------------------------------------- */
 @import "compass/html5-boilerplate";
+@import "compass/susy";
+@import "compass/typography";
+@import "compass/css3";
