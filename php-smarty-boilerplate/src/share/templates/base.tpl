@@ -19,10 +19,10 @@
 
     <body>
         <div class="page {$ACTION_NAME}">
-            <header>
+            <header role="banner">
                 <h1><a href="./">{$APP_TITLE}</a></h1>                
                 {block name=nav}
-                <nav>
+                <nav role="navigation">
                     <ul>
                         <li class="index{if $ACTION_NAME == 'index'} active{/if}"><a href="./">Start page</a></li>
                     </ul>
@@ -31,20 +31,20 @@
             </header>
     
             <div class="main">
-                <section class="content">
+                <section role="main" class="content">
                     {block name=content}
                     
                     {/block}
                 </section> <!-- end .content -->
                 
-                <aside>
+                <aside role="complementary">
                     {block name=sidebar}
                     
                     {/block}
                 </aside>
             </div> <!-- end .main -->
     
-            <footer>
+            <footer role="contentinfo">
                 {block name=footer}
                     <a href="index.php?action=legal">Legal notice</a>
                 {/block}
