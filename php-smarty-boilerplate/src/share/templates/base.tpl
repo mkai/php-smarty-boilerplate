@@ -51,8 +51,8 @@
             </footer>
         </div> <!-- end .page -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script> 
-        <script>!window.jQuery && document.write(unescape('%3Cscript src="{$MEDIA_URL}scripts/libs/jquery/1.7.0/jquery.min.js"%3E%3C/script%3E'))</script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+        <script>!window.jQuery && document.write(unescape('%3Cscript src="{$MEDIA_URL}scripts/libs/jquery/1.7.1/jquery.min.js"%3E%3C/script%3E'))</script>
         {block name=additional_scripts}{/block}
 
         <!--[if lt IE 7 ]>
