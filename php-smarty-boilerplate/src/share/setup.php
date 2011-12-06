@@ -29,6 +29,7 @@ $template = new Smarty();
 $template->template_dir = $config['smarty']['template_dir'];
 $template->compile_dir = $config['smarty']['template_compile_dir'];
 $template->cache_dir = $config['smarty']['template_cache_dir'];
+$template->caching = ($config['smarty']['template_caching_enabled'] ? 1 : 0);
 
 // assign server variables to base template
 $template->assign('REQUEST_URL', $config['request_url']);

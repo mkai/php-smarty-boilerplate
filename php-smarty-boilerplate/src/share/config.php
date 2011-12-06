@@ -31,6 +31,7 @@ $config['smarty'] = array();
 $config['smarty']['template_dir'] = dirname(__FILE__).'/templates/';
 $config['smarty']['template_compile_dir'] = $config['smarty']['template_dir'].'compiled';
 $config['smarty']['template_cache_dir'] = $config['smarty']['template_dir'].'cached';
+$config['smarty']['template_caching_enabled'] = !$config['debug'];
 
 // analytics
 $config['analytics'] = array();
