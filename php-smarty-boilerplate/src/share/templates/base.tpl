@@ -7,7 +7,7 @@
 
         <!--[if IE]><![endif]-->
         <link rel="stylesheet" href="{$MEDIA_URL}stylesheets/all.css{$CACHE_BUSTER}">
-        {block name=additional_stylesheets}{/block}
+        {block name=additional_styles}{/block}
 
         <title>{block name=title}Page title{/block} | {$APP_TITLE}</title>
         <meta name="description" content="{block name="description"}Site description.{/block}">
@@ -20,7 +20,7 @@
     <body>
         <div class="page {$ACTION_NAME}">
             <header role="banner">
-                <h1><a href="./">{$APP_TITLE}</a></h1>                
+                <h1><a href="./">{$APP_TITLE}</a></h1>
                 {block name=nav}
                 <nav role="navigation">
                     <ul>
@@ -31,7 +31,7 @@
             </header>
     
             <div class="main">
-                <section role="main" class="content">
+                <section role="main" class="content">                    
                     {block name=content}
                     
                     {/block}
@@ -53,6 +53,25 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
         <script>!window.jQuery && document.write(unescape('%3Cscript src="{$MEDIA_URL}scripts/libs/jquery/1.7.1/jquery.min.js"%3E%3C/script%3E'))</script>
+        <script src="{$MEDIA_URL}scripts/libs/jquery.pjax/jquery.pjax.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                (function($) {
+                    if (!$.support.pjax) { return; }
+                    var $links = $('a[href]:not(a[data-pjax="false"]):not(a[target="_blank"]):not(a[rel="external"]):not(a[href^="#"]):not(a[href$=".jpg"]):not(a[href$=".png"]):not(a[href$=".gif"]):not(a[href$=".jpeg"])'),
+                        $container = $('.page > .main');
+                    $links.pjax($container.selector, {
+                        timeout: 1500,
+                        success: function() {
+                            // scroll to top, but only if there is no hash in the URL
+                            if (window.location.hash.length == 0) {
+                                $('html, body').scrollTop(0);
+                            }
+                        }
+                    });
+                })(jQuery);
+            });
+        </script>
         {block name=additional_scripts}{/block}
 
         <!--[if lt IE 7 ]>
@@ -62,8 +81,8 @@
 
         {if $CONFIG.analytics.enabled && !$CONFIG.debug}
 		<script>
-            var _gaq=[['_setAccount', '{$CONFIG.analytics.google_analytics_id}'],['_trackPageview'],['_trackPageLoadTime']];
-            {literal}(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+            var _gaq=[['_setAccount', '{$CONFIG.analytics.google_analytics_id}'],['_trackPageview'],['_trackPageLoadTime']];            
+            {literal}(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
                 g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
                 s.parentNode.insertBefore(g,s)}(document,'script'));{/literal}
         </script>

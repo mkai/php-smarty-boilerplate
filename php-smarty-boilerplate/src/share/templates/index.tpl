@@ -1,11 +1,8 @@
-{extends file="base.tpl"}
+{extends file=$BASE_TEMPLATE_NAME}
 
 {block name=title}Start page{/block}
 {block name=description}{$smarty.block.parent}{/block}
 {block name=nav}{$smarty.block.parent}{/block}
-
-{block name=additional_scripts}{$smarty.block.parent}{/block}
-{block name=additional_stylesheets}{$smarty.block.parent}{/block}
 
 {block name=content}
 	<h1>Start page</h1>
@@ -27,3 +24,6 @@
 
 {block name=sidebar}{$smarty.block.parent}{/block}
 {block name=footer}{$smarty.block.parent}{/block}
+
+{block name=additional_scripts}{$smarty.block.parent}{/block}
+{block name=additional_styles}{$smarty.block.parent}{/block}
