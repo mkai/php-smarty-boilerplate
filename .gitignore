@@ -3,3 +3,4 @@
 *.log
 *.tpl.php
 share/stylesheets/.tmp/sass-cache
+/TODO.rst
