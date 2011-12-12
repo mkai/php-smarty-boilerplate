@@ -1,4 +1,5 @@
 <?php
+require_once('libs/Smarty-3.1.6/libs/Smarty.class.php');
 require_once('config.php');
 
 // set time zone
@@ -23,8 +24,6 @@ if ($config['sessions_enabled']) {
 }
 
 // set up smarty template engine
-require_once('libs/Smarty-3.1.5/libs/Smarty.class.php');
-
 $template = new Smarty();
 $template->template_dir = $config['smarty']['template_dir'];
 $template->compile_dir = $config['smarty']['template_compile_dir'];

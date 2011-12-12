@@ -1,4 +1,29 @@
-﻿===== Smarty-3.1.5 =====
+﻿===== Smarty-3.1.6  =====
+30.11.2011
+- bugfix is_cache() for individual cached subtemplates with $smarty->caching = CACHING_OFF did produce
+  an exception (Forum Topic 20531)
+
+29.11.2011
+- bugfix added exception if the default plugin handler did return a not static callback (Forum Topic 20512)
+
+25.11.2011
+- bugfix {html_select_date} and {html_slecet_time} did not default to current time if "time" was not specified 
+  since r4432 (issue 60)
+
+24.11.2011
+- bugfix a subtemplate later used as main template did use old variable values
+
+21.11.2011
+- bugfix cache file could include unneeded modifier plugins under certain condition
+
+18.11.2011
+- bugfix declare all directory properties private to map direct access to getter/setter also on extended Smarty class
+
+16.11.2011
+- bugfix Smarty_Resource::load() did not always return a proper resource handler (Forum Topic 20414)
+- added escape argument to html_checkboxes and html_radios (Forum Topic 20425)
+
+===== Smarty-3.1.5  =====
 14.11.2011
 - bugfix allow space between function name and open bracket (forum topic 20375)
 
