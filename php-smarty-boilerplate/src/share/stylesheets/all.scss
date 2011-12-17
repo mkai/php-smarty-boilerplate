@@ -11,6 +11,14 @@
 body { color: $font-color; }
 a { @include link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color); }
 img, embed, object, video { max-width: 100%; }
+.page > * { font-size: .7em; } /* this specifies a global font size for the site without influencing the width of the fluid grid. */
+
+/* Navigation
+-------------------------------------------------------------------------- */
+nav > ul { @include pie-clearfix; }
+nav > ul > li { float: left; margin-left: .7em; }
+nav > ul > li:first-child { margin-left: 0; }
+nav > ul > li.active > a { font-weight: bold; text-decoration: none; }
 
 /* Device layouts
 ------------------------------------------------- */

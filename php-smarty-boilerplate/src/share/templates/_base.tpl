@@ -25,6 +25,7 @@
                 <nav role="navigation">
                     <ul>
                         <li class="index{if $ACTION_NAME == 'index'} active{/if}"><a href="{url action=index}">Start page</a></li>
+                        <li class="about{if $ACTION_NAME == 'about'} active{/if}"><a href="{url action=about}">About</a></li>
                     </ul>
                 </nav>
                 {/block}
@@ -62,13 +63,20 @@
                         $container = $('.page > .main');
                     $links.pjax($container.selector, {
                         timeout: 1500,
-                        success: function() {
+                        success: function(data) {
+                            // update navigation
+                            $fragment = $(data).siblings('section[role="main"]');
+                            $pageName = $fragment.data('action');
+                            $mainNav = $('nav[role="navigation"] > ul');
+                            $mainNav.children('li').removeClass('active').siblings('.' + $pageName).addClass('active');
+                            
                             // scroll to top, but only if there is no hash in the URL
                             if (window.location.hash.length == 0) {
                                 $('html, body').scrollTop(0);
                             }
                         }
                     });
+                    
                 })(jQuery);
             });
         </script>

@@ -4,16 +4,6 @@
 # Note .htaccess files are an overhead, this logic should be in your Apache config if possible
 # httpd.apache.org/docs/2.2/howto/htaccess.html
 
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
-    # or, if you host your site within a subfolder, use:
-    # RewriteBase /subfolder/
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . index.php [L]
-</IfModule>
-
 # Techniques in here adapted from all over, including:
 #   Kroc Camen: camendesign.com/.htaccess
 #   perishablepress.com/press/2006/01/10/stupid-htaccess-tricks/
@@ -23,6 +13,19 @@
 ### If you run a webserver other than apache, consider:
 ### github.com/paulirish/html5-boilerplate-server-configs
 ###
+
+# ----------------------------------------------------------------------
+# SEO-friendly URLs (uncomment and set config.php -> 'fancy_urls' to 'true')
+# ----------------------------------------------------------------------
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteBase /
+#     # or, if you host your site within a subfolder, use:
+#     # RewriteBase /subfolder/
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteRule . index.php [L]
+# </IfModule>
 
 # ----------------------------------------------------------------------
 # Better website experience for IE users

@@ -11,13 +11,18 @@ $config['lang'] = 'en';
 $config['timezone'] = 'Europe/Berlin';
 
 // ...
-$config['app_name'] = 'mysite';
-$config['app_title'] = 'My site';
+$config['app_name'] = 'example';
+$config['app_title'] = 'Site title';
 
 // server-related
 $config['document_root'] = dirname(__FILE__).'/../public/';
 $config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/';
 $config['media_url'] = $config['base_url'].'static/';
+
+// controller/ action defaults
+// (used when no GET param is given)
+$config['default_controller'] = 'default';
+$config['default_action'] = 'index';
 
 // session support
 $config['sessions_enabled'] = false;
@@ -44,5 +49,5 @@ $config['analytics']['enabled'] = false;
 $config['analytics']['google_analytics_id'] = 'UA-XXXXX-X';
 
 // cache busting
-$config['cache_buster'] = '?3';
+$config['cache_buster'] = '?4';
 ?>

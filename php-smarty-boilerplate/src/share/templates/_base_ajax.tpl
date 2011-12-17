@@ -1,6 +1,6 @@
 <title>{block name=title}Page title{/block} | {$APP_TITLE}</title>
 
-<section role="main" class="content">
+<section role="main" class="content" data-controller="{$CONTROLLER_NAME}" data-action="{$ACTION_NAME}">
     {block name=content}
     
     {/block}

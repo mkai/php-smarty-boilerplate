@@ -2,10 +2,6 @@
 require_once('../share/setup.php');
 require_once('../share/util.php');
 
-// set defaults (used when no param is given and values cannot be derived from the request URL)
-$default_controller = 'default';
-$default_action = 'index';
-
 // get action and controller name from GET params or from URL if not given
 $controller = (isset($_GET['controller']) && trim($_GET['controller'] != '') ? $_GET['controller'] : null);
 $action = (isset($_GET['action']) && trim($_GET['action'] != '') ? $_GET['action'] : null);
@@ -23,12 +19,12 @@ if ($config['fancy_urls'] && strstr($_SERVER['REQUEST_URI'], 'index.php') === fa
 
 // if no GET params were given or params couldn't be extracted from the URL,
 // use the defaults
-if (!$controller) { $controller = $default_controller; }
-if (!$action) { $action = $default_action; }
+if (!$controller) { $controller = $config['default_controller']; }
+if (!$action) { $action = $config['default_action']; }
 
 // for a controller name other than 'default', try to open a template
 // named '$controller_$action.tpl', otherwise use '$action.tpl'.
-if ($controller != $default_controller) {
+if ($controller != $config['default_controller']) {
     $template_prefix = $controller.'_';
 }
 
