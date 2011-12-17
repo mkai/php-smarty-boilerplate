@@ -1,5 +1,5 @@
 <?php
-require_once('libs/Smarty-3.1.6/libs/Smarty.class.php');
+require_once('libs/smarty/Smarty-3.1.6/libs/Smarty.class.php');
 require_once('config.php');
 
 // set time zone
@@ -29,16 +29,13 @@ $template->template_dir = $config['smarty']['template_dir'];
 $template->compile_dir = $config['smarty']['template_compile_dir'];
 $template->cache_dir = $config['smarty']['template_cache_dir'];
 $template->caching = ($config['smarty']['template_caching_enabled'] ? 1 : 0);
+$template->addPluginsDir($config['document_root'].'../share/libs/smarty-plugins');
 
-// assign server variables to base template
-$template->assign('REQUEST_URL', $config['request_url']);
+// assign variables to base template
+$template->assign('CONFIG', $config);
+$template->assign('BASE_URL', $config['base_url']);
 $template->assign('MEDIA_URL', $config['media_url']);
 $template->assign('CACHE_BUSTER', $config['cache_buster']);
-
-// assign app variables to base template
 $template->assign('APP_NAME', $config['app_name']);
 $template->assign('APP_TITLE', $config['app_title']);
-
-// make config variables usable in template
-$template->assign('CONFIG', $config);
 ?>
