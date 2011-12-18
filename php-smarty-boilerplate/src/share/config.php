@@ -12,11 +12,11 @@ $config['timezone'] = 'Europe/Berlin';
 
 // ...
 $config['app_name'] = 'example';
-$config['app_title'] = 'Site title';
+$config['app_title'] = 'Site name';
 
 // server-related
 $config['document_root'] = dirname(__FILE__).'/../public/';
-$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/';
+$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/~Benutzer/php-smarty-boilerplate/'; // FIXME: undo to /
 $config['media_url'] = $config['base_url'].'static/';
 
 // controller/ action defaults

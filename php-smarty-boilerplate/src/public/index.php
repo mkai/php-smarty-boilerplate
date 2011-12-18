@@ -49,11 +49,21 @@ try {
     $template->display((isset($template_prefix) ? $template_prefix : '').$action.'.tpl', $cache_id, $compile_id);
 }
 
-catch (SmartyException $e) {    
+catch (SmartyException $e) {
+    if ($config['debug']) {
+        echo sprintf('<pre>%s</pre>', $e);
+        exit(1);
+    }
+    
     $template->display('_error-404.tpl', $cache_id, $compile_id);
 }
 
 catch (Exception $e) {
+    if ($config['debug']) {
+        echo sprintf('<pre>%s</pre>', $e);
+        exit(1);
+    }
+    
     $template->display('_error-500.tpl', $cache_id, $compile_id);
 }
 ?>

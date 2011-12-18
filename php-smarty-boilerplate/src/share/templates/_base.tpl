@@ -13,7 +13,7 @@
         <meta name="description" content="{block name="description"}Site description.{/block}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="{$MEDIA_URL}scripts/libs/modernizr/2.0.6/modernizr.min.js"></script>
+        <script src="{$MEDIA_URL}scripts/libs/modernizr/2.0.6/modernizr.js"></script>
         <script>document.documentElement.className+=navigator.platform.indexOf("Win32")!=-1||navigator.platform.indexOf("Win64")!=-1?" platform-windows":navigator.platform.indexOf("Linux")!=-1?" platform-linux":navigator.userAgent.indexOf("Mac OS X")!=-1||navigator.userAgent.indexOf("MSIE 5.2")!=-1||navigator.platform.indexOf("Mac")!=-1?" platform-mac":" platform-other";</script>
     </head>
 
@@ -32,9 +32,9 @@
             </header>
     
             <div class="main">
-                <section role="main" class="content">                    
+                <section role="main" class="content">
                     {block name=content}
-                    
+
                     {/block}
                 </section> <!-- end .content -->
                 
@@ -54,31 +54,66 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
         <script>!window.jQuery && document.write(unescape('%3Cscript src="{$MEDIA_URL}scripts/libs/jquery/1.7.1/jquery.min.js"%3E%3C/script%3E'))</script>
-        <script src="{$MEDIA_URL}scripts/libs/jquery.pjax/jquery.pjax.min.js"></script>
+        <script src="{$MEDIA_URL}scripts/libs/jquery.pjax/jquery.pjax.js"></script>
         <script>
-            $(document).ready(function() {
-                (function($) {
-                    if (!$.support.pjax) { return; }
-                    var $links = $('a[href]:not(a[data-pjax="false"]):not(a[target="_blank"]):not(a[rel="external"]):not(a[href^="#"]):not(a[href$=".jpg"]):not(a[href$=".png"]):not(a[href$=".gif"]):not(a[href$=".jpeg"])'),
-                        $container = $('.page > .main');
-                    $links.pjax($container.selector, {
-                        timeout: 1500,
-                        success: function(data) {
-                            // update navigation
-                            $fragment = $(data).siblings('section[role="main"]');
-                            $pageName = $fragment.data('action');
-                            $mainNav = $('nav[role="navigation"] > ul');
-                            $mainNav.children('li').removeClass('active').siblings('.' + $pageName).addClass('active');
-                            
-                            // scroll to top, but only if there is no hash in the URL
-                            if (window.location.hash.length == 0) {
-                                $('html, body').scrollTop(0);
+            (function($) {
+                if (!$.support.pjax) { return; }
+                var $links = $('a[href]:not(a[data-pjax="false"]):not(a[target="_blank"]):not(a[rel="external"]):not(a[href^="#"]):not(a[href$=".jpg"]):not(a[href$=".png"]):not(a[href$=".gif"]):not(a[href$=".jpeg"])'),
+                    $container = $('.page > .main');
+                $links.pjax($container.selector, {
+                    timeout: 1500,
+                    success: function(data) {
+                        $(window).trigger('pjax:success', [data]);
+                    }
+                });                    
+            })(jQuery);
+
+            (function($) {            
+                $(window).on('pjax:success', function(event, data) {
+                    // scroll to top, but only if there is no hash in the URL
+                    if (window.location.hash.length == 0) {
+                        $('html, body').scrollTop(0);
+                    }
+
+                    // update navigation
+                    $fragment = $(data).siblings('section[role="main"]');
+                    $pageName = $fragment.data('action');
+                    $mainNav = $('nav[role="navigation"] > ul');
+                    $mainNav.children('li').removeClass('active').siblings('.' + $pageName).addClass('active');
+                });
+            })(jQuery);
+            
+            (function($) {
+                function loadResponsiveImages() {
+                    var $images = $('noscript.image'); // FIXME: cannot target noscript in iOS 4 (simulator)!
+                    $images.each(function() {                        
+                        var $this = $(this);
+                        data = $this.data();
+                        $img = $('<img />', {
+                            alt: data.alt,
+                            title: data.title
+                        });
+
+                        src = data.src;
+                        for (var prop in data) {                        
+                            if (prop == 'alt' || prop == 'title' || prop == 'src') { continue; }
+                            obj = data[prop];
+                            for (var prop in obj) {
+                                if (Modernizr.mq(prop)) {
+                                    src = obj[prop];
+                                }
                             }
                         }
+
+                        $img.attr('src', src);
+                        $img.insertBefore($this);
+                        $this.remove();
                     });
-                    
-                })(jQuery);
-            });
+                }
+                
+                loadResponsiveImages();
+                $(window).on('pjax:success', loadResponsiveImages);
+            })(jQuery);
         </script>
         {block name=additional_scripts}{/block}
 
