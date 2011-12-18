@@ -12,7 +12,7 @@ $config['timezone'] = 'Europe/Berlin';
 
 // ...
 $config['app_name'] = 'example';
-$config['app_title'] = 'Site title';
+$config['app_title'] = 'Site name';
 
 // server-related
 $config['document_root'] = dirname(__FILE__).'/../public/';
